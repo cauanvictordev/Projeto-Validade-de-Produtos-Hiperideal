@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Validade - Hiperideal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li>Frios</li>
+                <li>Congelados</li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Controle de Validade de Produtos</h1>
+
+    <form id="product-form">
+        <input type="text" id="product-name" placeholder="Nome do produto" required>
+        <input type="date" id="expiry-date" required>
+        <input type="number" id="alert-days" placeholder="Dias antes para alertar" required>
+        <button type="submit">Adicionar Produto</button>
+        <p id="error-message" class="error-message"></p> <!-- Exibição de erro -->
+    </form>
+
+    <button id="delete-expired-btn" class="delete-all-btn">Excluir Todos os Produtos Vencidos</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Data de Validade</th>
+                <th>Dias Restantes</th>
+                <th>Notificação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

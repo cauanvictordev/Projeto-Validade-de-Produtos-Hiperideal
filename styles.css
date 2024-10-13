@@ -1,0 +1,306 @@
+/* Estilo Global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f3;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Formulário de Produtos */
+form#product-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+form#product-form input, 
+form#product-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #a3d9a5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+form#product-form input:focus, 
+form#product-form button:hover {
+    border-color: #34a853;
+    outline: none;
+}
+
+form#product-form button {
+    background-color: #34a853;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form#product-form button:hover {
+    background-color: #2a8341;
+}
+
+/* Botão para excluir produtos vencidos */
+button.delete-all-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button.delete-all-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Estilo da Tabela */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #34a853;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Notificações */
+.notification {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: green; /* Verde por padrão */
+}
+
+.notification.alert, 
+.notification.expired {
+    background-color: red; /* Vermelho quando estiver próximo de vencer ou já vencido */
+}
+
+
+/* Botão de Excluir */
+button.delete-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Responsividade para telas médias (até 768px) */
+@media (max-width: 768px) {
+    form#product-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    form#product-form input, 
+    form#product-form button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    button.delete-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    button.delete-all-btn {
+        font-size: 1rem;
+    }
+}
+
+/* Responsividade para telas pequenas (até 480px) */
+@media (max-width: 480px) {
+    form#product-form {
+        padding: 15px;
+    }
+
+    form#product-form input, 
+    form#product-form button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button.delete-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    button.delete-all-btn {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PARTE DO MENU 👇*/
+
+/* Estilo para o Menu no canto superior direito */
+header {
+    position: relative;
+    padding: 10px;
+}
+
+/* Ícone de menu */
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #34a853;
+    color: white;
+    border-radius: 50%;
+    z-index: 1000; /* Mantém o ícone acima de outros elementos */
+}
+
+/* Estilo do menu oculto */
+.menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: #34a853;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999; /* Mantém o menu acima de outros elementos */
+}
+
+/* Mostra o menu com animação */
+.menu.show-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo dos itens do menu */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li:hover {
+    background-color: #2a8341;
+}
+
+/* Efeito de transição suave ao abrir/fechar */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
